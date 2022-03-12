@@ -6,16 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Clock</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="https://cdn-icons.flaticon.com/png/512/896/premium/896354.png?token=exp=1647104319~hmac=d1ecc2c0c38e132f506914c16ddcc029" type="image/x-icon">
 </head>
 <body onload="initClock()">
     <center><div class="container">
         <div class="date-day">
-            <input readonly id="day"></input>
-            <input readonly id="date"></input>
+            <span readonly id="day"></span>
+            <span readonly id="date"></span>
         </div>
         <div class="time">
-            <input readonly id="time"></input>
-            <input readonly id="ampm"></input>
+            <span readonly id="time"></span>
+            <span readonly id="ampm"></span>
         </div>
     </div></center>
     <script>
@@ -40,10 +41,22 @@
                 AmPm = 'AM';
             }
 
-            document.getElementById('day').value = days[day-1];
-            document.getElementById('date').value = months[mn] + ' ' + dt + ', ' + yr;
-            document.getElementById('time').value = hours + ' : ' + minutes + ' : ' + seconds;
-            document.getElementById('ampm').value = AmPm;
+            if(hours<10){
+                hours = '0' + hours;
+            }
+
+            if(minutes<10){
+                minutes = '0' + minutes;
+            }
+
+            if(seconds<10){
+                seconds = '0' + seconds;
+            }
+
+            document.getElementById('day').textContent = days[day-1];
+            document.getElementById('date').textContent = months[mn] + ' ' + dt + ', ' + yr;
+            document.getElementById('time').textContent = hours + ' : ' + minutes + ' : ' + seconds;
+            document.getElementById('ampm').textContent = AmPm;
             // console.log(day);
         }
         function initClock() {

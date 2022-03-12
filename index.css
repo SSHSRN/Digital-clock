@@ -1,10 +1,33 @@
-input{
-    border: none;
-    outline: none;
+*{
+    background-color: black;
+    color: white;
+}
+
+span{
+    font-size: 40px;
+    margin: 5px;
 }
 
 .container{
-    border: 2px solid black;
-    width: 30%;
-    margin-top: 25%;
+    border: 1px solid yellow;
+    width: 35%;
+    margin-top: 20%;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+#day{
+    color: rgb(70, 222, 228);
+}
+
+#date{
+    color: rgb(22, 177, 224);
+}
+
+#time{
+    color: rgb(236, 88, 150);
+}
+
+#ampm{
+    color: rgb(134, 21, 125);
 }
